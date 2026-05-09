@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Careers | Automated Job Board</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <nav class="bg-white shadow-sm py-4">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600">AICareers.io</h1>
+            <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700">Post a Job ($99)</a>
+        </div>
+    </nav>
+
+    <header class="bg-blue-600 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-extrabold mb-4">Find Your Next Role in AI</h2>
+            <p class="text-xl opacity-90">The #1 automated job board for Artificial Intelligence professionals.</p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-12">
+        <div class="space-y-6">
+            <% jobs.forEach(job => { %>
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 flex justify-between items-center hover:border-blue-300 transition-colors">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800"><%= job.title %></h3>
+                        <p class="text-gray-600 font-medium"><%= job.company %></p>
+                        <div class="flex gap-4 mt-2 text-sm text-gray-500">
+                            <span>📍 <%= job.location %></span>
+                            <span>💰 <%= job.salary %></span>
+                        </div>
+                    </div>
+                    <a href="<%= job.link %>" class="bg-gray-100 text-blue-600 px-6 py-2 rounded-lg font-bold hover:bg-blue-50">Apply</a>
+                </div>
+            <% }) %>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-gray-500">
+            <p>&copy; 2024 AICareers.io - Automated AI Job Matching</p>
+        </div>
+    </footer>
+</body>
+</html>
